@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+<title>Regression Analysis Note - Note</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
+
+
+
+
+<meta name="description" content="">
+
+
+
+
+
+    <meta name="description" content="&amp;#x78A9;&amp;#x4E8C;&amp;#x4E0A;&amp;#x4FEE;&amp;#x56DE;&amp;#x6B78;&amp;#x5206;&amp;#x6790;&amp;#xFF0C;&amp;#x5176;&amp;#x4E2D;&amp;#x5E7E;&amp;#x500B;&amp;#x7AE0;&amp;#x7BC0;&amp;#x7684;&amp;#x7B46;&amp;#x8A18;&amp;#x3002;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Regression Analysis Note">
+<meta property="og:url" content="http://yoursite.com/2020/05/31/Regression/index.html">
+<meta property="og:site_name" content="Note">
+<meta property="og:description" content="&amp;#x78A9;&amp;#x4E8C;&amp;#x4E0A;&amp;#x4FEE;&amp;#x56DE;&amp;#x6B78;&amp;#x5206;&amp;#x6790;&amp;#xFF0C;&amp;#x5176;&amp;#x4E2D;&amp;#x5E7E;&amp;#x500B;&amp;#x7AE0;&amp;#x7BC0;&amp;#x7684;&amp;#x7B46;&amp;#x8A18;&amp;#x3002;">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-05-30T17:58:41.000Z">
+<meta property="article:modified_time" content="2020-05-30T18:02:00.242Z">
+<meta property="article:author" content="HongCC">
+<meta property="article:tag" content="Statistics">
+<meta name="twitter:card" content="summary">
+<meta property="fb:app_id" content="[object Object]">
+
+
+
+
+
+<link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+    
+<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                    
+                    Note
+                    
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item "
+               href="/archives">Archives</a>
+            
+            <a class="navbar-item "
+               href="/about">About</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="搜尋" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
+            
+            
+            <a class="navbar-item" title="GitHub" href="https://github.com/Hong-CC" target="_blank" rel="noopener">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+               
+            
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            Regression Analysis Note
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-05-30T17:58:41.000Z" itemprop="datePublished">5月 31 2020</time>
+        </span>
+        
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>&#x78A9;&#x4E8C;&#x4E0A;&#x4FEE;&#x56DE;&#x6B78;&#x5206;&#x6790;&#xFF0C;&#x5176;&#x4E2D;&#x5E7E;&#x500B;&#x7AE0;&#x7BC0;&#x7684;&#x7B46;&#x8A18;&#x3002;</p>
+<a id="more"></a>
+
+<h1 id="Chapter-8-Indicator-Variable"><a href="#Chapter-8-Indicator-Variable" class="headerlink" title="Chapter 8: Indicator Variable"></a>Chapter 8: Indicator Variable</h1><h2 id="8-1-The-General-Concept-of-Indicator-Variables"><a href="#8-1-The-General-Concept-of-Indicator-Variables" class="headerlink" title="8.1 The General Concept of Indicator Variables"></a>8.1 The General Concept of Indicator Variables</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>O</th>
+<th>A</th>
+<th>B</th>
+<th>AB</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>D1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<p>Why not</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>O</th>
+<th>A</th>
+<th>B</th>
+<th>AB</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Type</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+</tbody></table>
+<p>&#x8CC7;&#x6599;&#x6C92;&#x6709;&#x5DEE;&#xFF0C;&#x4F46;&#x5BEB;&#x6210;&#x8FF4;&#x6B78;&#x5F0F;&#xFF0C;&#x7B49;&#x65BC;&#x662F;&#x7528;&#x4E00;&#x500B;$\beta$&#x4F86;&#x523B;&#x5283;&#x56DB;&#x7DAD;&#x5EA6;&#x7684;&#x8840;&#x578B;&#xFF0C;&#x5BE6;&#x969B;&#x4E0A;&#x7684;&#x505A;&#x6CD5;&#x61C9;&#x8A72;&#x628A;&#x56DB;&#x7DAD;&#x5EA6;&#x5340;&#x5206;&#x958B;&#x4F86;&#xFF0C;&#x5404;&#x5225;&#x7528;$\beta$&#x4F86;&#x6355;&#x6349;&#x3002;</p>
+<hr>
+<blockquote>
+<p>Example 8.3</p>
+<p>Hint&#xFF1A;&#x5982;&#x679C;&#x8981;&#x9078;&#x591A;&#x500B;type&#xFF0C;&#x4E00;&#x822C;&#x6703;&#x9078;&#x64C7;&#x8CC7;&#x6599;&#x7B46;&#x6578;&#x8F03;&#x591A;&#x7684;&#x90A3;&#x500B;&#x985E;&#x5225;&#x7576;&#x4F5C;&#x57FA;&#x790E;&#x503C;&#xFF0C;&#x56E0;&#x70BA;&#x5176;&#x4ED6;&#x7684;&#x985E;&#x5225;&#x90FD;&#x8981;&#x8DDF;&#x57FA;&#x790E;&#x503C;&#x6BD4;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x5011;&#x6703;&#x5E0C;&#x671B;&#x57FA;&#x790E;&#x503C;&#x5148;&#x4F30;&#x5C0D;&#xFF0C;&#x800C;&#x6709;&#x6BD4;&#x8F03;&#x591A;&#x7684;&#x8CC7;&#x6599;&#xFF0C;&#x6BD4;&#x8F03;&#x53EF;&#x80FD;&#x4F30;&#x7684;&#x6E96;&#x3002;</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>Example 8.5</p>
+<p>&#x5982;&#x679C;&#x6211;&#x5011;&#x5C07;&#x4E00;&#x7B46;&#x8CC7;&#x6599;&#x5207;&#x6210;M&#x7B49;&#x5206;&#xFF0C;A&#x8CC7;&#x6599;&#x53EF;&#x4EE5;&#x8DD1;&#x51FA;X&#x5F71;&#x97FF;Y&#x7684;$\beta$&#xFF1B;B&#x8CC7;&#x6599;&#x4E5F;&#x53EF;&#x4EE5;&#x8DD1;&#x51FA;X&#x5F71;&#x97FF;Y&#x7684;$\beta$&#x6211;&#x5011;&#x60F3;&#x77E5;&#x9053;&#x9019;M&#x500B;$\beta$&#x5230;&#x5E95;&#x6709;&#x6C92;&#x6709;&#x5DEE;&#x7570;&#x3002;<br>$$<br>y = \beta_{0m} + \beta_{1m}x + \varepsilon, m=1,2 \cdots M<br>$$<br>F-test&#x7684;&#x908F;&#x8F2F;&#xFF0C;&#x56E0;&#x70BA;$\beta_1$&#x9700;&#x8981;&#x653E;&#x6240;&#x6709;&#x7684;&#x8CC7;&#x6599;&#x53BB;&#x8DD1;&#x8FF4;&#x6B78;&#xFF0C;&#x4F46;&#x6211;&#x5011;&#x628A;&#x8FF4;&#x6B78;&#x7684;&#x4FC2;&#x6578;&#x7528;indicator&#x7684;&#x65B9;&#x5F0F;&#x62C6;&#x958B;&#x3002;<br>$$<br>y = \beta_{0m}+\beta_1x +\varepsilon \<br>y = \beta_1x+\varepsilon+\beta_{01}+\beta_21_{group2}<br>$$</p>
+</blockquote>
+<hr>
+<h1 id="Chapter-9-Regression-with-Panel-Data"><a href="#Chapter-9-Regression-with-Panel-Data" class="headerlink" title="Chapter 9:  Regression with Panel Data"></a>Chapter 9:  Regression with Panel Data</h1><h2 id="Fundmantal"><a href="#Fundmantal" class="headerlink" title="Fundmantal"></a>Fundmantal</h2><ul>
+<li><p><strong>Cross-sectional data</strong>  <strong>&#x6A6B;&#x65B7;&#x9762;&#x8CC7;&#x6599;</strong> (data collected on <u>several</u> individuals/units at one point in time)</p>
+</li>
+<li><p><strong>Time series data</strong> (data collected on <u>one</u> individual/unit over several time periods)</p>
+<blockquote>
+<p>&#x6642;&#x9593;&#x5E8F;&#x5217;&#x8207;panel data&#x6709;&#x5F88;&#x5927;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x6700;&#x5927;&#x7684;&#x4E0D;&#x540C;&#x662F;&#xFF0C;&#x6642;&#x9593;&#x5E8F;&#x5217;&#x55AE;&#x4E00;&#x6642;&#x9EDE;&#xFF0C;&#x53EA;&#x6703;&#x6709;&#x4E00;&#x500B;&#x89C0;&#x6E2C;&#x503C;&#xFF0C;&#x50CF;&#x662F;&#x5929;&#x6587;&#x8CC7;&#x6599;&#xFF0C;&#x89C0;&#x6E2C;&#x4E0D;&#x540C;&#x6642;&#x9EDE;&#x7684;&#x5730;&#x7403;&#x72C0;&#x6CC1;&#xFF0C;&#x540C;&#x4E00;&#x500B;&#x6642;&#x9EDE;&#x53EA;&#x6703;&#x6709;&#x4E00;&#x500B;&#x5730;&#x7403;&#x3002;</p>
+</blockquote>
+</li>
+<li><p><strong>Panel data</strong> are repeated corss-sections over time.</p>
+<blockquote>
+<p>&#x5F9E;&#x8CC7;&#x6599;&#x7D50;&#x69CB;&#x53BB;&#x60F3;&#x50CF;&#xFF0C;&#x6700;&#x76F4;&#x89BA;&#x7684;&#x60F3;&#x6CD5;&#x662F;Panel data&#x662F;&#x4E8C;&#x7DAD;&#x7684;&#x8CC7;&#x6599;&#xFF0C;&#x904E;&#x53BB;&#x53EF;&#x80FD;&#x53EA;&#x6709;&#x4E00;&#x500B;&#x65B9;&#x5411;&#x7684;&#x8CC7;&#x6599;&#xFF0C;&#x73FE;&#x5728;&#x591A;&#x52A0;&#x5165;&#x4E86;&#x6642;&#x9593;&#x9019;&#x500B;&#x65B9;&#x5411;&#x3002;</p>
+<p>e.g &#x904E;&#x53BB;&#x662F;&#x7B2C;&#x4E00;&#x500B;&#x75C5;&#x4EBA;&#x3001;&#x7B2C;&#x4E8C;&#x500B;&#x75C5;&#x4EBA;&#x3001;&#x7B2C;&#x4E09;&#x500B;&#x75C5;&#x4EBA;&#x7684;&#x72C0;&#x6CC1;&#xFF1B;Panel data&#x662F;&#x7B2C;&#x4E00;&#x500B;&#x75C5;&#x4EBA;&#x5728;&#x6642;&#x9593;&#x4E00;&#x3001;&#x7B2C;&#x4E00;&#x500B;&#x75C5;&#x4EBA;&#x5728;&#x6642;&#x9593;&#x4E8C;&#x7B49;&#x7B49;&#x3002;</p>
+</blockquote>
+</li>
+<li><p>Some jargon&#x2026;</p>
+<ol>
+<li>Another term of panel data is <strong>longitudinal data</strong>.</li>
+<li><strong>balance pamel</strong>: no missing observations</li>
+<li><strong>unbalance pamel</strong>: &#x6709;&#x4E9B;&#x7A7A;&#x683C;&#x6C92;&#x6709;&#x8CC7;&#x6599;</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><p>Why are panel data useful?</p>
+<blockquote>
+<p>&#x4E00;&#x822C;&#x7684;&#x8FF4;&#x6B78;&#x6BD4;&#x8F03;&#x6015;&#x6389;&#x53C3;&#x6578;&#x7684;&#x554F;&#x984C;&#xFF0C;&#x50CF;&#x662F;&#x6C92;&#x6709;&#x8003;&#x616E;&#x5230;&#x67D0;&#x4E9B;&#x9700;&#x8981;&#x88AB;&#x7D0D;&#x5165;&#x56DE;&#x6B78;&#x7684;&#x56E0;&#x7D20;&#x4F46;&#x8CC7;&#x6599;&#x6C92;&#x6709;&#xFF0C;&#x6216;&#x8005;&#x6211;&#x5011;&#x89C0;&#x5BDF;&#x4E0D;&#x5230;&#x3002;</p>
+</blockquote>
+</li>
+</ul>
+<p>&#x200B;        panel data&#x53EF;&#x4EE5;&#x89E3;&#x6C7A;&#x67D0;&#x4E9B;&#x8CC7;&#x6599;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x8209;&#x4F8B;&#x4F86;&#x8AAA;&#x5728;subj&#x7684;&#x65B9;&#x5411;&#x6703;&#x6709;&#x6027;&#x5225;&#x4E4B;&#x985E;&#x7684;&#x5E72;&#x64FE;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x6211;&#x5011;&#x7528;panel data&#x7684;&#x65B9;&#x5F0F;&#x8655;&#x7406;&#xFF0C;&#x56E0;&#x70BA;&#x6027;&#x5225;&#x4E0D;&#x6703;&#x96A8;&#x6642;&#x9593;&#x6539;&#x8B8A;&#xFF0C;&#x6240;&#x4EE5;&#x6027;&#x5225;&#x9019;&#x500B;&#x56E0;&#x7D20;&#xFF0C;&#x5728;panel data&#x88E1;&#x5C31;&#x6703;&#x88AB;&#x6D88;&#x6389;&#x3002;</p>
+<h2 id="Fixed-Effect"><a href="#Fixed-Effect" class="headerlink" title="Fixed Effect"></a>Fixed Effect</h2><blockquote>
+<p>Examople (Week8_1 Panel Regression.pdf)</p>
+<p>&#x8A0E;&#x8AD6;&#x5564;&#x9152;&#x7A05;&#x8DDF;&#x9152;&#x99D5;&#x81F4;&#x6B7B;&#x7387;&#x7684;&#x95DC;&#x4FC2;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x8003;&#x616E;panel data&#x6703;&#x5F97;&#x51FA;&#x5564;&#x9152;&#x7A05;&#x8207;&#x9152;&#x99D5;&#x81F4;&#x6B7B;&#x7387;&#x6B63;&#x76F8;&#x95DC;&#x7684;&#x554F;&#x984C;&#x3002;</p>
+<p>&#x9019;&#x662F;&#x56E0;&#x70BA;&#x5982;&#x679C;&#x6211;&#x5011;&#x751A;&#x9EBC;&#x90FD;&#x4E0D;&#x7BA1;&#xFF0C;&#x5C31;&#x76F4;&#x63A5;&#x628A;&#x5168;&#x90E8;&#x8CC7;&#x6599;&#x5168;&#x90FD;&#x4E1F;&#x9032;&#x53BB;&#x8DD1;&#x56DE;&#x6B78;&#xFF0C;&#x7B49;&#x65BC;&#x662F;&#x5047;&#x8A2D;&#x6BCF;&#x500B;&#x5730;&#x65B9;(&#x5DDE;)&#x6BCF;&#x4E00;&#x5E74;&#x7684;&#x9053;&#x8DEF;&#x54C1;&#x8CEA;&#x3001;&#x98F2;&#x9152;&#x6587;&#x5316;&#x90FD;&#x662F;&#x4E00;&#x6A23;&#x7684;&#xFF0C;&#x6C92;&#x6709;&#x9760;&#x616E;&#x5230;&#x6BCF;&#x500B;&#x5DDE;&#x5E74;&#x5EA6;&#x4E0D;&#x540C;&#x7684;&#x5DEE;&#x7570;&#xFF0C;&#x800C;&#x9019;&#x4E9B;&#x201D;&#x80CC;&#x666F;&#x6771;&#x897F;&#x201D;&#x6703;&#x5C0D;&#x6211;&#x5011;&#x505A;&#x51FA;&#x4F86;&#x7684;&#x7D50;&#x8AD6;&#x9020;&#x6210;&#x5E72;&#x64FE;&#x3002;</p>
+<p>&#x800C;&#x7528;panel data&#x662F;&#x6211;&#x5011;&#x5229;&#x7528;&#x4E8C;&#x7DAD;&#x7684;&#x8CC7;&#x6599;&#x6D88;&#x9664;&#x6389;&#x67D0;&#x4E9B;&#x8AA4;&#x5DEE;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x5011;&#x6703;&#x8A8D;&#x70BA;panel data model&#x6703;&#x9577;&#x9019;&#x6A23;&#xFF1A;<br>$$<br>FatalityRate_n=\beta_0+\beta_1\cdot BeerTax_{it} +\beta_2 \cdot Z_i + \mu_{it}<br>$$<br>&#x9019;&#x908A;&#x7684;$Z_i$&#x6307;&#x7684;&#x5C31;&#x662F;&#x90A3;&#x4E9B;&#x5DDE;&#x5225;&#x7684;&#x5DEE;&#x7570;(&#x4E26;&#x5047;&#x8A2D;&#x9019;&#x4E9B;&#x5DDE;&#x5225;&#x7684;&#x6548;&#x61C9;&#xFF0C;&#x4E0D;&#x53D7;&#x6642;&#x9593;&#x7684;&#x5F71;&#x97FF;)&#xFF0C;&#x4F46;&#x73FE;&#x5728;&#x6211;&#x5011;&#x9047;&#x5230;&#x7684;&#x554F;&#x984C;&#x662F;&#x9019;&#x4E9B;&#x5F71;&#x97FF;&#x56E0;&#x7D20;&#x89C0;&#x5BDF;&#x4E0D;&#x5230;&#xFF0C;the math consider 1988 and 1982<br>$$<br>FatalityRatei_{1988} = &#x3B2;<em>0 + &#x3B2;_1BeerTax</em>{i,1988} + &#x3B2;<em>2Z_i + u</em>{i1988} \<br>FatalityRatei_{1982} = &#x3B2;<em>0 + &#x3B2;_1BeerTax</em>{i,1982} + &#x3B2;<em>2Z_i + u</em>{i,1982}<br>$$<br>Suppose E($\mu_i$|$BeerTax_{it}$,$Z_i$) = 0 </p>
+<p>&#x56E0;&#x70BA;&#x6211;&#x5011;&#x89C0;&#x5BDF;&#x4E0D;&#x5230;$Z_i$&#x6240;&#x4EE5;&#x4E00;&#x4E8C;&#x5F0F;&#x76F8;&#x6E1B;&#x5C31;&#x80FD;&#x5F97;&#x5230;&#x8003;&#x616E;&#x5B8C;&#x5DDE;&#x5225;&#x5DEE;&#x7570;&#x5F8C;&#x7684;&#x7D50;&#x679C;&#x4E86;&#xFF0C;so<br>$$<br>FatalityRatei_{1988} - FatalityRatei_{1982} = \&#x3B2;<em>1(BeerTax</em>{i,1988}-BeerTax_{i,1982}) + (u_{i1988}-u_{i,1982})<br>$$<br>&#x6240;&#x4EE5;&#x6211;&#x5011;&#x4E0D;&#x7528;&#x771F;&#x7684;&#x77E5;&#x9053;&#x90A3;&#x500B;$Z_i$&#x5230;&#x5E95;&#x662F;&#x4EC0;&#x9EBC;&#xFF0C;&#x7E3D;&#x6B78;&#x6211;&#x5011;&#x53EA;&#x77E5;&#x9053;&#x6703;&#x6709;&#x5DDE;&#x5225;&#x7684;&#x5DEE;&#x7570;&#xFF0C;&#x4E26;&#x60F3;&#x8FA6;&#x6CD5;&#x628A;&#x5B83;&#x6D88;&#x6389;&#x3002;</p>
+</blockquote>
+<ul>
+<li><p>&#x6D88;&#x6389;&#x90A3;&#x4E9B;&#x53EF;&#x80FD;&#x5F71;&#x97FF;&#x56E0;&#x7D20;&#x7684;&#x65B9;&#x6CD5;</p>
+<ol>
+<li><p>&#x5982;&#x679C;&#x8DDF;subj&#x6709;&#x95DC;&#xFF0C;&#x4F46;&#x8207;&#x6642;&#x9593;&#x7121;&#x95DC;&#xFF1A;&#x628A;$\alpha_i$&#x5C0D;&#x8457;&#x6642;&#x9593;&#x52A0;&#x8D77;&#x4F86;&#x53D6;&#x5E73;&#x5747;&#xFF0C;&#x7136;&#x5F8C;&#x518D;&#x8207;&#x539F;&#x5F0F;&#x76F8;&#x6E1B;&#xFF0C;&#x5C31;&#x80FD;&#x628A;&#x6703;&#x9020;&#x6210;&#x5E72;&#x64FE;&#x4F46;&#x770B;&#x4E0D;&#x5230;&#x7684;$\alpha_i$&#x62FF;&#x6389;&#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x8DDF;&#x6642;&#x9593;&#x6709;&#x95DC;&#xFF0C;&#x4F46;&#x8207;subj&#x7121;&#x95DC;&#xFF1A;</p>
+</li>
+<li><p>&#x8DDF;&#x5169;&#x500B;&#x90FD;&#x6709;&#x95DC;</p>
+<p>&#x2192; &#x6982;&#x5FF5;&#x90FD;&#x662F;&#x628A;&#x7121;&#x95DC;&#x7684;&#x90A3;&#x500B;&#x65B9;&#x5411;&#x52A0;&#x8D77;&#x4F86;</p>
+</li>
+</ol>
+</li>
+<li><p>Some Theory</p>
+</li>
+</ul>
+<p>&#x5728;&#x4EC0;&#x9EBC;&#x60C5;&#x6CC1;&#x4E0B;&#xFF0C;panel data&#x6703;&#x9806;&#x5229;&#x904B;&#x4F5C;&#xFF1F;</p>
+<h2 id="Random-Effect"><a href="#Random-Effect" class="headerlink" title="Random Effect"></a>Random Effect</h2><ul>
+<li><p>Fixed effects model VS Random effects model<br>$$<br>Y_{it} = \beta_1X_{it}+\alpha_i+u_i<br>$$<br>Fixed effects&#xFF1A; &#x628A;$\alpha_i$&#x7576;&#x4F5C;&#x500B;&#x5225;&#x7684;&#x5E38;&#x6578;&#x4F30;&#x8A08;&#x3002;&#x4F46;&#x7576;i&#x5F88;&#x5927;&#x7684;&#x6642;&#x5019;&#xFF0C;&#x6216;&#x662F;$\alpha_i$&#x4E4B;&#x9593;&#x6703;&#x4E92;&#x76F8;&#x5F71;&#x97FF;&#x6642;&#xFF0C;&#x8981;&#x500B;&#x5225;&#x4F30;&#x5404;&#x500B;$\alpha_i$&#x5C31;&#x6703;&#x8B8A;&#x5F97;&#x6BD4;&#x8F03;&#x56F0;&#x96E3;&#xFF0C;Random effects&#xFF1A;&#x628A;$\alpha_i$&#x8996;&#x4F5C;&#x4E00;&#x500B;&#x5206;&#x914D;&#xFF0C;&#x5C07;&#x8981;&#x4F30;&#x7684;$i$&#x964D;&#x70BA;2&#x7DAD;$\alpha_i \sim N(\mu_i, \sigma^2_i)$</p>
+</li>
+<li><p>which one should we choose?</p>
+<p>depends on</p>
+<ol>
+<li><p>&#x500B;&#x5225;&#x6A23;&#x672C;&#x80FD;&#x4E0D;&#x80FD;&#x88AB;&#x7576;&#x4F5C;&#x5F9E;&#x5927;&#x6BCD;&#x9AD4;&#x96A8;&#x6A5F;&#x62BD;&#x6A23;&#x7684;&#x6A23;&#x672C; (random sample)</p>
+</li>
+<li><p>$E(\varepsilon_i X_i) = 0$</p>
+<p>if yes: random, if no: fixed </p>
+</li>
+<li><p>T &#x8DDF; N &#x7684;&#x95DC;&#x4FC2;</p>
+<ul>
+<li>for large T and small N&#xFF0C;&#x6C92;&#x592A;&#x5927;&#x7684;&#x5DEE;&#x5225;</li>
+<li>for large T and large N&#xFF0C;random effects&#x597D;&#x4E00;&#x4E9B;</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>$$<br>Y_{it} = \beta_1 + \beta_2X_{2it} + \beta_3X_{3it} + u_{it}<br>$$</p>
+<ul>
+<li>i: <em>i : th</em> cross-sectional unit, $i = 1, \dots, N$</li>
+<li>t: <em>t : th</em> time period, $ t = 1, \dots, T$</li>
+</ul>
+<h3 id="OLS-Regression"><a href="#OLS-Regression" class="headerlink" title="OLS Regression"></a>OLS Regression</h3><p>&#x76F4;&#x63A5;&#x628A;&#x6240;&#x6709;&#x6771;&#x897F;&#x90FD;&#x62FF;&#x4F86;&#x8DD1;&#x56DE;&#x6B78;&#xFF0C;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x5F0F;&#x5B50;<br>$$<br>Y_{it} = \beta_1 + \beta_2X_{2it} + \beta_3X_{3it} + u_{it}<br>$$<br>&#x5728;&#x9019;&#x500B;&#x5F0F;&#x5B50;&#x88E1;&#xFF0C;error term&#x6355;&#x6349;&#x4E86;&#x6240;&#x6709;&#x6771;&#x897F;&#xFF0C;&#x5FFD;&#x7565;&#x4E86;&#x6642;&#x9593;&#x7B49;&#x5176;&#x4ED6;&#x56E0;&#x7D20;&#x3002;</p>
+<h3 id="Fixed-Effects-Models-with-Dummy-Variable"><a href="#Fixed-Effects-Models-with-Dummy-Variable" class="headerlink" title="Fixed Effects Models with Dummy Variable"></a>Fixed Effects Models with Dummy Variable</h3><blockquote>
+<p>&#x6703;&#x56E0;&#x70BA;&#x5047;&#x8A2D;&#x7684;&#x4E0D;&#x540C;&#x800C;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x6A21;&#x578B;&#x3002;</p>
+</blockquote>
+<p><strong>Different intercepts for <u>different individuals</u> $\beta_{1i}$, but does not vary over time</strong></p>
+<p>&#x622A;&#x8DDD;&#x6703;&#x56E0;&#x70BA;&#x4E0D;&#x540C;&#x7684;individual&#x800C;&#x4E0D;&#x540C;&#xFF0C;&#x4F46;&#x4E0D;&#x96A8;&#x6642;&#x9593;&#x6539;&#x8B8A;</p>
+<p>If the number of individuals in $N = 4$<br>$$<br>Y_{it} = \beta_{1i} + \beta_2X_{2it} + \beta_3X_{3it} + u_{it} \<br>Y_{it} = \alpha_1 + \alpha_2D_{2i} + \alpha_3D_{3i} + \alpha_4D_{4i} + \beta_2X_{2it} + \beta_3X_{3it} + u_{it}<br>$$<br><strong>Different intercepts for <u>different time period</u> instead $\beta_{1t}$</strong></p>
+<p>&#x622A;&#x8DDD;&#x56E0;&#x6642;&#x9593;&#x4E0D;&#x540C;&#x800C;&#x4E0D;&#x540C;</p>
+<p>If the number of time periods is $T = 20$<br>$$<br>Y_{it} = \beta_{1t} + \beta_2X_{2it} + \beta_3X_{3it} + u_{it} \<br>Y_{it} = \alpha_1 + \alpha_2D_{2i} + \alpha_3D_{3i} + \alpha_4D_{4i} +\lambda_1 + \lambda_2D_{2t} + \lambda_3D_{3t} + \dots +\lambda_{20}D_{20t} + \beta_2X_{2it} + \beta_3X_{3it} + u_{it}<br>$$<br><strong>Different intercepts for <u>different individual AND time periods</u> $\beta_{1it}$</strong></p>
+<p>&#x622A;&#x8DDD;&#x56E0;idividuals &#x8207;&#x6642;&#x9593;&#x4E0D;&#x540C;&#x800C;&#x4E0D;&#x540C;</p>
+<p>For $N=4 \ and \ T = 20$<br>$$<br>\begin{align}<br>Y_{it} &amp;= \beta_{1it} + \beta_2X_{2it} + \beta_3X_{3it} + u_{it} \<br>Y_{it} &amp;= \alpha_1 + \alpha_2D_{2i} + \alpha_3D_{3i} + \alpha_4D_{4i} \ &amp; + \lambda_1 + \lambda_2D_{2t} + \lambda_3D_{3t} + \dots +\lambda_{20}D_{20t} + \beta_2X_{2it} + \beta_3X_{3it} + u_{it}<br>\end{align}<br>$$<br><strong>Both intercepts and slopes varies over individuals</strong></p>
+<p>For $N=4$<br>$$<br>\begin{align}<br>Y_{it} &amp;= \alpha_1 + \alpha_2D_{2i} + \alpha_3D_{3i} + \alpha_4D_{4i} + \beta_2X_{2it} + \beta_3X_{3it} \&amp;+ \gamma_1D_{2i}X{2it} + \gamma_2D_{2i}X_{3it}\ &amp; +\gamma_3D_{3i}X_{2it} +\gamma_{4}D_{3i}X_{3it} \ &amp; + \gamma_{5}D_{4i}X_{2it} + \gamma_6D_{4it}X_{3it} + u_{it}<br>\end{align}<br>$$<br><strong>Both intercepts and slope varies ovet time periods</strong></p>
+<h3 id="Random-Effects-Models"><a href="#Random-Effects-Models" class="headerlink" title="Random Effects Models"></a>Random Effects Models</h3><p>$$<br>Y_{it} = \beta_{1i} + \beta_2X_{2it} + \beta_3X_{3it} + u_{it}<br>$$</p>
+<p>intercepts/effects $\beta_{1i}$ &#x88AB;&#x8996;&#x70BA;$E(\beta_{1i}) = \beta_1$&#x7684;&#x96A8;&#x6A5F;&#x8B8A;&#x6578;&#xFF0C;&#x6240;&#x4EE5;&#x500B;&#x5225;individual&#x7684;&#x622A;&#x8DDD;&#x53EF;&#x4EE5;&#x8868;&#x9054;&#x70BA;<br>$$<br>\beta_{1i} = \beta_1 + \varepsilon_i \ \ \ \ i = 1, \dots,N \<br>where \ E(\varepsilon_i) = 0 \ and \ Var(\varepsilon_i) = \sigma^2_\varepsilon<br>$$<br>&#x6240;&#x4EE5;&#x539F;&#x5F0F;&#x53EF;&#x4EE5;&#x6539;&#x5BEB;&#x6210;<br>$$<br>Y_{it} = \beta_{1i} + \beta_2X_{2it} + \beta_3X_{3it} + \varepsilon_i + u_{it} \<br>Y_{it} = \beta_{1i} + \beta_2X_{2it} + \beta_3X_{it} + w_{it}<br>$$<br>&#x5176;&#x4E2D;$\varepsilon_i$&#x6307;&#x7684;&#x662F;&#x53EA;&#x5C0D;$i$&#x6709;&#x95DC;&#x7684;&#x89C0;&#x6E2C;&#x8AA4;&#x5DEE;&#xFF0C;&#x5C0D;&#x6240;&#x6709;$t$&#x90FD;&#x662F;&#x4E00;&#x6A23;&#x7684;</p>
+<p>$w_{it} = \varepsilon_{i} + u_{it}$&#x5DF2;&#x7D93;&#x628A;&#x6240;&#x6709;&#x7684;effect&#x4F75;&#x5230;&#x88E1;&#x982D;&#x4E86;</p>
+<p>&#x800C;&#x7D44;&#x5408;&#x8AA4;&#x5DEE;$w_{it}$&#x9808;&#x6EFF;&#x8DB3;&#x4E0B;&#x5217;&#x5047;&#x8A2D;&#xFF1A;</p>
+<ol>
+<li>$E(w_{it}) = 0$</li>
+<li>$Var(w_{it}) = \sigma^2_\varepsilon+\sigma^2_u$</li>
+<li>$Corr(w_{it}, w_{is})= \frac{\sigma^2_\varepsilon}{\sigma^2_\varepsilon+\sigma^2_u}$</li>
+</ol>
+<p>&#x7531;&#x65BC;$Var \ not \ homo \ and \ Corr \neq0$&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;HAC&#x65B9;&#x6CD5;&#x505A;&#x8ABF;&#x6574;&#x3002;</p>
+<h1 id="Chapter-10-Variable-Selection-amp-Model-Building"><a href="#Chapter-10-Variable-Selection-amp-Model-Building" class="headerlink" title="Chapter 10: Variable Selection &amp; Model Building"></a>Chapter 10: Variable Selection &amp; Model Building</h1><h2 id="10-1-Introduction"><a href="#10-1-Introduction" class="headerlink" title="10.1 Introduction"></a>10.1 Introduction</h2><blockquote>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x4E26;&#x6C92;&#x6709;&#x6240;&#x8B02;&#x6700;&#x597D;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x800C;&#x662F;&#x7AEF;&#x5C08;&#x6848;&#x60F3;&#x8981;&#x9054;&#x5230;&#x7684;&#x76EE;&#x6A19;&#x548C;&#x89E3;&#x6C7A;&#x7684;&#x554F;&#x984C;&#x3002;</p>
+</blockquote>
+<ul>
+<li>Two &#x201C;conflicting&#x201D; goal:<ol>
+<li>&#x76E1;&#x53EF;&#x80FD;&#x591A;&#x7684;regressors&#x3002;</li>
+<li>&#x592A;&#x591A;&#x7684;regressors&#x537B;&#x6703;&#x5C0E;&#x81F4;$\hat y$&#x7684;&#x8B8A;&#x7570;&#x589E;&#x52A0;&#xFF0C;&#x800C;&#x4E14;&#x5728;&#x6536;&#x96C6;&#x8CC7;&#x6599;&#x6642;&#x9700;&#x8981;&#x66F4;&#x591A;&#x7684;&#x6210;&#x672C;&#x3002;</li>
+</ol>
+</li>
+</ul>
+<p>&#x8209;&#x4F8B;&#x4F86;&#x8AAA;&#xFF0C;&#x50CF;&#x662F;ML&#x6216;&#x662F;&#x7121;&#x6BCD;&#x6578;&#x7684;&#x5206;&#x6790;&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x9078;&#x64C7;&#x300C;&#x76E1;&#x53EF;&#x80FD;&#x591A;&#x7684;regressors&#x300D;&#x56E0;&#x70BA;&#x4ED6;&#x5011;&#x66F4;&#x91CD;&#x8996;&#x7684;&#x662F;&#x7528;&#x4F86;&#x505A;&#x9810;&#x6E2C;&#xFF0C;&#x5C0D;&#x65BC;&#x8B8A;&#x6578;&#x7684;&#x986F;&#x4E0D;&#x986F;&#x8457;&#x5176;&#x5BE6;&#x5C31;&#x4E0D;&#x662F;&#x90A3;&#x9EBC;&#x91CD;&#x8981;&#xFF0C;&#x81F3;&#x65BC;&#x9700;&#x4E0D;&#x9700;&#x8981;&#x505A;&#x964D;&#x7DAD;&#x5EA6;&#x5247;&#x53D6;&#x6C7A;&#x65BC;&#x5C08;&#x6848;&#x7684;&#x76EE;&#x6A19;&#xFF0C;&#x6216;&#x662F;&#x96FB;&#x8166;&#x80FD;&#x4E0D;&#x80FD;&#x8655;&#x7406;&#x3002;</p>
+<ul>
+<li>&#x539F;&#x5247;&#x4E0A;&#x4F86;&#x8AAA;&#xFF1A;</li>
+</ul>
+<ol>
+<li>&#x653E;&#x592A;&#x5C11;&#x53C3;&#x6578;&#xFF0C;&#x6703;&#x8B8A;&#x6210;&#x504F;&#x8AA4;&#x4F30;&#x8A08;&#x91CF;</li>
+<li>&#x653E;&#x592A;&#x591A;&#x53C3;&#x6578;&#xFF0C;&#x8B8A;&#x7570;&#x6703;&#x8B8A;&#x5927;</li>
+</ol>
+<h2 id="10-2-Computational-Techniques-for-Variable-Selection"><a href="#10-2-Computational-Techniques-for-Variable-Selection" class="headerlink" title="10.2 Computational Techniques for Variable Selection"></a>10.2 Computational Techniques for Variable Selection</h2><ol>
+<li>forward selection</li>
+<li>backward selection</li>
+<li>stepwise regression</li>
+</ol>
+<p><strong>Forward selection</strong></p>
+<p>&#x5F9E;&#x4EC0;&#x9EBC;&#x90FD;&#x6C92;&#x6709;&#x958B;&#x59CB;&#x9078;&#x3002;<br>$$<br>y = \beta_0 + \varepsilon \<br>step \ 1: \<br>y = \beta_0 + \beta_1X_1 + \varepsilon \<br>y = \beta_0 + \beta_2X_2 + \varepsilon \<br>y = \beta_0 + \beta_3X_3 + \varepsilon \<br>y = \beta_0 + \beta_4X_4 + \varepsilon \<br>$$<br>&#x5F9E;&#x9019;&#x56DB;&#x500B;model&#x88E1;&#x6311;&#x6BD4;&#x539F;&#x672C;model&#x597D;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x5169;&#x500B;&#x4EE5;&#x4E0A;&#x6BD4;&#x539F;&#x672C;&#x7684;&#x597D;&#x5C31;&#x6311;&#x6700;&#x597D;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x900F;&#x904E;&#x6AA2;&#x5B9A;$\beta_1 = 0$&#x7684;F test&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x627E;&#x51FA;&#x6700;&#x986F;&#x8457;(F&#x503C;&#x6700;&#x5927;&#x7684;)&#x7684;&#x3002;&#x5982;&#x6B64;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x6311;&#x4E0B;&#x4F86;&#xFF0C;&#x76F4;&#x5230;&#x5F97;&#x4E0D;&#x5230;&#x4EFB;&#x4F55;&#x986F;&#x8457;&#x7684;model&#x3002;</p>
+<p>&#x76F8;&#x8F03;&#x65BC;backward&#xFF0C;forward&#x6BD4;&#x8F03;&#x5BB9;&#x6613;&#x505C;&#x5728;&#x4E00;&#x500B;&#x53C3;&#x6578;&#x6BD4;&#x8F03;&#x5C11;&#xFF0C;&#x6BD4;&#x8F03;&#x7CBE;&#x7C21;&#x7684;model&#xFF0C;&#x56E0;&#x70BA;forward&#x662F;&#x5F9E;&#x4EC0;&#x9EBC;&#x90FD;&#x6C92;&#x6709;&#x958B;&#x59CB;&#x6311;&#x3002;</p>
+<p><strong>Backward selection</strong></p>
+<p>&#x8DDF;Forward&#x76F8;&#x53CD;&#xFF0C;&#x5F9E;full model&#x958B;&#x59CB;&#x9078;&#x3002;</p>
+<p><strong>Stepwise regression</strong></p>
+<p>&#x539F;&#x5247;&#x662F;forward&#xFF0C;&#x4F46;&#x5F8C;&#x7E8C;&#x7684;&#x6B65;&#x9A5F;&#x6703;&#x662F;forward&#x8207;backward&#x5171;&#x5B58;&#x3002;</p>
+<p><strong>Summary</strong></p>
+<p>&#x4E00;&#x822C;&#x800C;&#x8A00;&#xFF0C;&#x6703;&#x628A;&#x4E0A;&#x9762;&#x9019;&#x4E09;&#x500B;&#x65B9;&#x6CD5;&#x90FD;&#x8A66;&#x8A66;&#x770B;&#xFF0C;&#x5982;&#x679C;&#x771F;&#x7684;&#x6709;&#x500B;&#x89E3;&#x91CB;&#x8B8A;&#x6578;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x90A3;&#x61C9;&#x8A72;&#x4E0D;&#x7BA1;&#x7528;&#x54EA;&#x7A2E;&#x65B9;&#x5F0F;&#xFF0C;&#x90FD;&#x6703;&#x51FA;&#x73FE;&#x5728;&#x6700;&#x5F8C;&#x7684;&#x6A21;&#x578B;&#x88E1;&#xFF0C;&#x7B97;&#x662F;&#x4E00;&#x7A2E;&#x6BD4;&#x8F03;&#x4FDD;&#x96AA;&#x7684;&#x9078;&#x8B8A;&#x6578;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
+<h1 id="Principal-Component-Analysis"><a href="#Principal-Component-Analysis" class="headerlink" title="Principal Component Analysis"></a>Principal Component Analysis</h1><blockquote>
+<p>&#x5047;&#x5982;&#x6211;&#x5011;&#x6709;&#x4E00;&#x7B46;&#x8CC7;&#x6599;n x k&#xFF0C;n&#x662F;&#x8CC7;&#x6599;&#x7B46;&#x6578;&#xFF0C;k&#x662F;&#x8B8A;&#x6578;&#xFF0C;&#x4F46;k&#x5F88;&#x5927;&#xFF0C;&#x6211;&#x5011;&#x9700;&#x8981;&#x9032;&#x884C;&#x964D;&#x7DAD;&#xFF0C;&#x4F86;&#x5E6B;&#x52A9;&#x6211;&#x5011;&#x9032;&#x4E00;&#x6B65;&#x5206;&#x6790;&#xFF0C;&#x4F46;&#x4E1F;&#x6389;&#x8B8A;&#x6578;&#xFF0C;&#x4E00;&#x5B9A;&#x6703;&#x4E1F;&#x6389;&#x8CC7;&#x8A0A;&#xFF0C;&#x4F46;&#x6211;&#x5011;&#x8A72;&#x5982;&#x4F55;&#x9078;&#x64C7;&#x8981;&#x4E1F;&#x6389;&#x7684;&#x8B8A;&#x6578;&#xFF0C;&#x4F86;&#x6E1B;&#x5C11;&#x964D;&#x7DAD;&#x7684;&#x640D;&#x5931;&#x3002;</p>
+</blockquote>
+<p>PCA &#x6703;&#x9047;&#x5230;&#x7684;&#x5169;&#x500B;&#x554F;&#x984C;&#xFF1A;</p>
+<ol>
+<li>&#x539F;&#x672C;&#x7684;$X_1, X_2, \dots ,X_P$&#x6703;&#x8B8A;&#x6210;$PC_1, PC_2, \dots , PC_p$&#x4F46;&#x9019;&#x4E9B;PC&#x662F;&#x900F;&#x904E;X&#x7D44;&#x5408;&#x800C;&#x6210;&#x7684;&#xFF0C;&#x4E26;&#x7121;&#x6CD5;&#x89E3;&#x91CB;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x6211;&#x5011;&#x60F3;&#x505A;&#x7684;&#x4E8B;&#xFF0C;&#x662F;&#x8981;&#x597D;&#x597D;&#x89E3;&#x91CB;&#x9019;&#x4E9B;X&#x600E;&#x9EBC;&#x5F71;&#x97FF;y&#xFF0C;PCA&#x53EF;&#x80FD;&#x5C31;&#x7121;&#x6CD5;&#x4F7F;&#x7528;&#x3002;</li>
+<li>&#x56E0;&#x70BA;PCA&#x662F;&#x91DD;&#x5C0D;X&#x9032;&#x884C;&#x964D;&#x7DAD;&#xFF0C;&#x96D6;&#x7136;&#x4FDD;&#x7559;&#x4E86;X&#x7684;&#x8CC7;&#x8A0A;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x4FDD;&#x8B49;&#x9019;&#x4E9B;&#x8CC7;&#x8A0A;&#x80FD;&#x7528;&#x65BC;&#x89E3;&#x91CB;y&#x3002;</li>
+</ol>
+<h1 id="Chapter-11-Validation-of-Regression-Model"><a href="#Chapter-11-Validation-of-Regression-Model" class="headerlink" title="Chapter 11: Validation of Regression Model"></a>Chapter 11: Validation of Regression Model</h1><blockquote>
+<p>Model adequacy checking&#xFF0C;&#x662F;&#x78BA;&#x5B9A;&#x6A21;&#x578B;&#x7684;&#x57FA;&#x790E;&#x5047;&#x8A2D;&#x6C92;&#x6709;&#x592A;&#x96E2;&#x8B5C;&#x7684;&#x9055;&#x53CD;&#x3002;</p>
+<p>Model validation&#xFF0C;&#x662F;&#x78BA;&#x4FDD;&#x6A21;&#x578B;&#x53EF;&#x4EE5;&#x7528;&#x3002;</p>
+</blockquote>
+<h1 id="Chapter-12-Nonlinear-Regression"><a href="#Chapter-12-Nonlinear-Regression" class="headerlink" title="Chapter 12: Nonlinear Regression"></a>Chapter 12: Nonlinear Regression</h1><p>&#x5982;&#x4F55;&#x5224;&#x65B7;&#x662F;&#x4E0D;&#x662F;&#x975E;&#x7DDA;&#x6027;&#x6A21;&#x578B;&#xFF1F;&#x5C0D;&#x6A21;&#x578B;&#x53D6;&#x671F;&#x671B;&#x503C;&#xFF0C;&#x63A5;&#x8457;&#x5C0D;$\beta$&#x504F;&#x5FAE;&#x5206;&#xFF0C;&#x5982;&#x679C;&#x7D50;&#x679C;&#x9084;&#x6709;&#x53C3;&#x6578;&#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x975E;&#x7DDA;&#x6027;&#x6A21;&#x578B;&#xFF0C;&#x4F46;&#x9019;&#x7A2E;&#x65B9;&#x5F0F;&#x6709;&#x500B;&#x7F3A;&#x9EDE;&#x662F;&#x6211;&#x5011;&#x5FC5;&#x9808;&#x5148;&#x77E5;&#x9053;&#x6A21;&#x578B;&#x9577;&#x600E;&#x6A23;&#x3002;</p>
+</body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Statistics/">#Statistics</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2020/04/20/%E6%B8%AC%E8%A9%A6/">測試</a>
+            
+        </span>
+    </div>
+    
+</article>
+
+
+
+
+    </div>
+</section>
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                &copy; 2020 HongCC&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+            </div>
+            <div class="column is-hidden-mobile"></div>
+
+            
+            <div class="column is-narrow">
+                <div class="columns is-mobile is-multiline is-centered">
+                
+                    
+                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/ppoffice/hexo-theme-minos" target="_blank" rel="noopener">
+                    
+                    GitHub
+                    
+                </a>
+                
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+
+<!-- test if the browser is outdated -->
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script>
+
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("zh-CN");
+</script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+</script>
+
+    
+    
+    
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            if (typeof($.fn.lightGallery) === 'function') {
+                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery').justifiedGallery();
+            }
+        });
+    })(jQuery);
+</script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
+      })
+    </script>
+
+    
+    
+
+    
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站內搜尋" />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '頁面',
+                CATEGORIES: '分類',
+                TAGS: '標籤',
+                UNTITLED: '(無標題)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+    
+</body>
+</html>
