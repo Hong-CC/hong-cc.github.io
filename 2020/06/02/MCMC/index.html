@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>Note</title>
+<title>MCMC Note - Note</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -16,12 +16,17 @@
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Note">
-<meta property="og:url" content="http://yoursite.com/index.html">
+    <meta name="description" content="&amp;#x7D00;&amp;#x9304;&amp;#x4E00;&amp;#x4E0B;&amp;#x8499;&amp;#x5730;&amp;#x5361;&amp;#x7F85;&amp;#x99AC;&amp;#x53EF;&amp;#x592B;&amp;#x7B97;&amp;#x6CD5;(MCMC)&amp;#x514D;&amp;#x5F97;&amp;#x671F;&amp;#x672B;&amp;#x8003;&amp;#x53C8;&amp;#x5FD8;&amp;#x8A18;&amp;#x600E;&amp;#x9EBC;&amp;#x505A;&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MCMC Note">
+<meta property="og:url" content="http://yoursite.com/2020/06/02/MCMC/index.html">
 <meta property="og:site_name" content="Note">
+<meta property="og:description" content="&amp;#x7D00;&amp;#x9304;&amp;#x4E00;&amp;#x4E0B;&amp;#x8499;&amp;#x5730;&amp;#x5361;&amp;#x7F85;&amp;#x99AC;&amp;#x53EF;&amp;#x592B;&amp;#x7B97;&amp;#x6CD5;(MCMC)&amp;#x514D;&amp;#x5F97;&amp;#x671F;&amp;#x672B;&amp;#x8003;&amp;#x53C8;&amp;#x5FD8;&amp;#x8A18;&amp;#x600E;&amp;#x9EBC;&amp;#x505A;&amp;#">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-06-02T08:15:03.000Z">
+<meta property="article:modified_time" content="2020-06-02T08:48:17.096Z">
 <meta property="article:author" content="HongCC">
+<meta property="article:tag" content="Statistics">
 <meta name="twitter:card" content="summary">
 <meta property="fb:app_id" content="[object Object]">
 
@@ -114,11 +119,10 @@
 
     <section class="section">
     <div class="container">
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
+    <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            <a href="/2020/06/02/MCMC/" itemprop="url">MCMC Note</a>
+            MCMC Note
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
@@ -132,80 +136,54 @@
     
         <html><head></head><body><p>&#x7D00;&#x9304;&#x4E00;&#x4E0B;&#x8499;&#x5730;&#x5361;&#x7F85;&#x99AC;&#x53EF;&#x592B;&#x7B97;&#x6CD5;(MCMC)&#x514D;&#x5F97;&#x671F;&#x672B;&#x8003;&#x53C8;&#x5FD8;&#x8A18;&#x600E;&#x9EBC;&#x505A;&#x3002;</p>
 <p>&#x4F46;&#x5148;&#x8A18;&#x9304;Gibbs (&#x56E0;&#x70BA;&#x6211;&#x9084;&#x662F;&#x641E;&#x61C2;MH&#x5012;&#x5E95;&#x600E;&#x9EBC;&#x505A;&#x7684;&#xFF0C;&#x5E0C;&#x671B;&#x80FD;&#x5FEB;&#x9EDE;&#x88DC;&#x4E0A;QQ)</p>
-<p>Gibbs Sample&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x662F;Metropolis-Hasting Sampler&#x7684;&#x4E00;&#x7A2E;&#x7279;&#x4F8B;&#x3002;</p></body></html>
-        <p class="article-more-link">
-            <a href="/2020/06/02/MCMC/#more">閱讀更多</a>
-        </p>
+<p>Gibbs Sample&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x662F;Metropolis-Hasting Sampler&#x7684;&#x4E00;&#x7A2E;&#x7279;&#x4F8B;&#x3002;</p>
+<a id="more"></a>
+
+<h2 id="&#x4F7F;&#x7528;&#x6642;&#x6A5F;"><a href="#&#x4F7F;&#x7528;&#x6642;&#x6A5F;" class="headerlink" title="&#x4F7F;&#x7528;&#x6642;&#x6A5F;"></a>&#x4F7F;&#x7528;&#x6642;&#x6A5F;</h2><p>&#x7576;&#x806F;&#x5408;&#x5206;&#x5E03;$f(x,y)$&#x672A;&#x77E5;&#x6216;&#x5F88;&#x919C;&#x5F88;&#x96E3;&#x5F9E;&#x806F;&#x5408;&#x6A5F;&#x7387;&#x5206;&#x4F48;&#x62BD;&#x6A23;&#xFF0C;&#x4F46;&#x6211;&#x5011;&#x537B;&#x77E5;&#x9053;&#x55AE;&#x4E00;&#x8B8A;&#x6578;&#x7684;&#x689D;&#x4EF6;&#x6A5F;&#x7387;&#xFF0C;&#x5373;&#x5DF2;&#x77E5;$f(x|y)$&#x8207;$f(y|x)$&#xFF0C;&#x5728;&#x9019;&#x7A2E;&#x60C5;&#x6CC1;&#x4E0B;&#xFF0C;&#x5C31;&#x80FD;&#x4F7F;&#x7528;Gibbs&#x4F86;&#x5E6B;&#x52A9;&#x6211;&#x5011;&#x62BD;&#x5230;$x, y $&#x7684;&#x806F;&#x5408;&#x5206;&#x4F48;&#x3002;</p>
+<p>&#x5927;&#x6982;&#x5FF5;&#x662F;&#x8F2A;&#x6D41;&#x62BD;x&#x8DDF;y&#xFF0C;&#x5148;&#x7D66;&#x5B9A;y&#x62BD;x&#xFF0C;&#x518D;&#x7D66;&#x5B9A;&#x525B;&#x525B;&#x62BD;&#x5230;&#x7684;x&#x62BD;&#x65B0;&#x7684;y&#xFF0C;&#x5982;&#x6B64;&#x53CD;&#x8986;&#xFF0C;&#x5F97;&#x5230;&#x6700;&#x7D42;&#x7684;&#x7D50;&#x679C;&#x3002;</p>
+<h2 id="&#x6F14;&#x7B97;&#x6CD5;"><a href="#&#x6F14;&#x7B97;&#x6CD5;" class="headerlink" title="&#x6F14;&#x7B97;&#x6CD5;"></a>&#x6F14;&#x7B97;&#x6CD5;</h2><p>&#x4E0B;&#x9762;&#x7684;pseudo code &#x4F86;&#x81EA;<a href="http://ccckmit.wikidot.com/st:gibbssampling" target="_blank" rel="noopener">&#x9019;&#x88E1;</a></p>
+<p></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Algorithm GibbsSampling(X, Y)</span><br><span class="line">&#x3000;Y[0] = random initialize a distribution</span><br><span class="line">&#x3000;for i = 1 to N</span><br><span class="line">&#x3000;&#x3000;generate X[i] from P(X | Y[i-1])</span><br><span class="line">&#x3000;&#x3000;generate Y[i] from P(Y | X[i]) </span><br><span class="line">&#x3000;return {X[N], Y[N]}</span><br><span class="line">End Algorithm</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>&#x7576;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x8F15;&#x9B06;&#x7684;&#x628A;&#x4E0A;&#x9762;&#x7684;&#x7B97;&#x6CD5;&#x7531;2&#x500B;&#x96A8;&#x6A5F;&#x8B8A;&#x6578;&#x64F4;&#x5145;&#x6210;k&#x500B;&#xFF0C;&#x6982;&#x5FF5;&#x4E00;&#x6A23;&#xFF0C;&#x7576;&#x8981;&#x62BD;$j$&#x7684;&#x6642;&#x5019;&#x5C31;&#x7D66;&#x5B9A;&#x9664;&#x4E86;$j$&#x4EE5;&#x5916;&#x7684;&#x96A8;&#x6A5F;&#x8B8A;&#x6578;&#xFF0C;pseudo code&#x5982;&#x4E0B;&#x3002;</p>
+<p></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Algorithm GibbsSampling(X[1...k])</span><br><span class="line">&#x3000;X = random initialize a distribution</span><br><span class="line">&#x3000;for i = 1 to N</span><br><span class="line">&#x3000;&#x3000;generate X&apos;[1] from X and P(X[1] | X[2], ..., X[k])</span><br><span class="line">      ...</span><br><span class="line">&#x3000;&#x3000;generate X&apos;[j] from X and P(X[i] | X[1], ..., X[j-1], X[j+1],...,X[k])</span><br><span class="line">      ...</span><br><span class="line">&#x3000;&#x3000;generate X&apos;[k] from X and P(X[k] | X[1], ..., X[k-1])</span><br><span class="line">    X = X&apos;</span><br><span class="line">  end</span><br><span class="line">&#x3000;return X</span><br><span class="line">End Algorithm</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="&#x5BE6;&#x4F5C;"><a href="#&#x5BE6;&#x4F5C;" class="headerlink" title="&#x5BE6;&#x4F5C;"></a>&#x5BE6;&#x4F5C;</h2><p>(&#x9019;&#x5176;&#x5BE6;&#x662F;&#x4F5C;&#x696D;QQ)</p>
+<blockquote>
+<p>Given an efficient method for generating nine uniform points on (0,1) conditional on the event than no two of them are within 0.1 of each other.</p>
+</blockquote>
+<p>Using Gibbs Sampler, the algorithm is implemented as follows.</p>
+<ul>
+<li>Step 1: set $x_1&#x3001;x_2 \dots x_9 = 0.1&#x3001;0.2 \dots 0.9$</li>
+<li>Step 2:<br>$x_1|x_2\dots x_9 \sim U(0,x_2-0.1)$<br>$x_2|x_1 \ x_3\dots x_9 \sim U(x_1+0.1,x_3-0.1)$<br>$x_3|x_1 \ x_2 \ x_4 \dots x_9 \sim U(x_2+0.1,x_4-0.1)$<br>$\vdots$<br>$x_9|x_1 \dots x_8 \sim U(x_8+0.1, 1)$</li>
+<li>Step 3: Repeat Step 2 N times.</li>
+</ul>
+<p>Repeat 10 time. The result will be<br></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[0.00920446 0.12711574 0.24654891 0.40492615 0.53389484 0.6616597 0.77638536 0.88252739 0.98980808]</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>Here is the python code:<br></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">def Gibbs(trans, init, n):</span><br><span class="line">    for i in range(n):</span><br><span class="line">        for j in range(len(init)):</span><br><span class="line">            x_p = trans(init, j)</span><br><span class="line">    return x_p</span><br><span class="line"></span><br><span class="line">def test_trans(x, d):</span><br><span class="line">    a = 0</span><br><span class="line">    if d &gt; 0:</span><br><span class="line">        a = x[d-1]+0.1</span><br><span class="line">    b = 1</span><br><span class="line">    if d &lt; 8:</span><br><span class="line">        b = x[d+1]-0.1</span><br><span class="line">    ans = x</span><br><span class="line">    ans[d] = np.random.uniform()*(b-a)+a</span><br><span class="line">    return ans</span><br><span class="line">    </span><br><span class="line"># simulate</span><br><span class="line">np.random.seed(0)</span><br><span class="line">init = np.linspace(0.1, 1, 9)</span><br><span class="line">simu = Gibbs(trans= test_trans, init=init, n = 100)</span><br><span class="line">print(simu)</span><br></pre></td></tr></tbody></table></figure><p></p>
+</body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Statistics/">#Statistics</a></span>
     
     </div>
     
     
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2020/05/31/Regression/" itemprop="url">Regression Analysis Note</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-05-30T17:58:41.000Z" itemprop="datePublished">5月 31 2020</time>
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
+            
         </span>
-        
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><p>&#x78A9;&#x4E8C;&#x4E0A;&#x4FEE;&#x56DE;&#x6B78;&#x5206;&#x6790;&#xFF0C;&#x5176;&#x4E2D;&#x5E7E;&#x500B;&#x7AE0;&#x7BC0;&#x7684;&#x7B46;&#x8A18;&#x3002;</p></body></html>
-        <p class="article-more-link">
-            <a href="/2020/05/31/Regression/#more">閱讀更多</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2020/04/20/%E6%B8%AC%E8%A9%A6/" itemprop="url">測試</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-04-19T17:04:36.000Z" itemprop="datePublished">4月 20 2020</time>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2020/05/31/Regression/">Regression Analysis Note</a>
+            
         </span>
-        
-        
     </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><p>&#x6E2C;&#x8A66;&#x767C;&#x6587;!!!</p>
-<p>&#x9810;&#x89BD;&#x770B;&#x7684;&#x5230;&#x6211;</p></body></html>
-        <p class="article-more-link">
-            <a href="/2020/04/20/%E6%B8%AC%E8%A9%A6/#more">閱讀更多</a>
-        </p>
-    
-    </div>
-    
     
 </article>
 
 
 
 
-    
-    
     </div>
 </section>
     <footer class="footer">
