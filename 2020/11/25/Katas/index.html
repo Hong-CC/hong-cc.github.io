@@ -24,7 +24,7 @@
 <meta property="og:description" content="&amp;#x9019;&amp;#x662F;&amp;#x6211;&amp;#x5728;Codewars&amp;#x7DF4;&amp;#x7FD2;&amp;#x7684;&amp;#x7D00;&amp;#x9304;&amp;#x3002; &amp;#x89BA;&amp;#x5F97;&amp;#x883B;&amp;#x6709;&amp;#x8DA3;&amp;#x7684;&amp;#xFF0C;&amp;#x96D6;&amp;#x7136;&amp;#x53EA;&amp;#x662F;&amp;#x500B;&amp;#x5931;&amp;#x696D">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-11-24T18:09:03.000Z">
-<meta property="article:modified_time" content="2020-11-24T18:34:08.523Z">
+<meta property="article:modified_time" content="2020-11-25T19:26:50.909Z">
 <meta property="article:author" content="HongCC">
 <meta name="twitter:card" content="summary">
 <meta property="fb:app_id" content="[object Object]">
@@ -65,6 +65,7 @@
     
 
     
+
 
 
 <meta name="generator" content="Hexo 4.2.0"></head>
@@ -131,6 +132,15 @@
         
         
     </div>
+    <div class="level is-size-7">
+    	<div class="level-left">
+        	<i class="fa fa-eye"></i>
+        	<span>&nbsp;</span>
+        	<span id="busuanzi_container_page_pv" style="display: inline;">
+            		<span id="busuanzi_value_page_pv">0</span>
+        	</span>
+    	</div>
+    </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
         <html><head></head><body><p>&#x9019;&#x662F;&#x6211;&#x5728;<a href="https://www.codewars.com/" target="_blank" rel="noopener">Codewars</a>&#x7DF4;&#x7FD2;&#x7684;<a href="https://www.codewars.com/users/Hong-CC" target="_blank" rel="noopener">&#x7D00;&#x9304;</a>&#x3002;</p>
@@ -138,11 +148,25 @@
 <p>&#x81F3;&#x65BC;&#x70BA;&#x4EC0;&#x9EBC;&#x662F;Codewars&#x4E0D;&#x662F;LeetCode&#xFF1F;<del>&#x56E0;&#x70BA;LeetCode&#x6211;&#x53EA;&#x5BEB;&#x5F97;&#x51FA;&#x7B2C;&#x4E00;&#x984C;&#x3002;</del></p>
 <a id="more"></a>
 
-<h2 id="5-Kyu"><a href="#5-Kyu" class="headerlink" title="5 Kyu"></a>5 Kyu</h2><h3 id="Land-perimeter"><a href="#Land-perimeter" class="headerlink" title="Land perimeter"></a>Land perimeter</h3><p>&#x984C;&#x76EE;&#xFF1A;<a href="https://www.codewars.com/kata/land-perimeter" target="_blank" rel="noopener">https://www.codewars.com/kata/land-perimeter</a></p>
-<p>Task&#xFF1A;&#x7D66;&#x5B9A;&#x7684;arr&#x88E1;&#x7684;X&#x8868;&#x793A;&#x4E00;&#x584A;1x1&#x7684;&#x571F;&#x5730;&#xFF0C;&#x6578;&#x51FA;&#x571F;&#x5730;&#x7684;&#x5468;&#x9577;&#x3002;</p>
-<p>Hint&#xFF1A;&#x5468;&#x9577; $=$ &#x571F;&#x5730;&#x584A;&#x6578; $\times$ 4 $-$ &#x76F8;&#x9130;&#x908A;&#x6578; $\times$ 2&#x200B; <del>&#xFF08;&#x6211;&#x662F;google&#x4E86;&#x624D;&#x77E5;&#x9053;&#xFF09;</del></p>
+<h2 id="5-Kyu"><a href="#5-Kyu" class="headerlink" title="5 Kyu"></a>5 Kyu</h2><h3 id="Land-perimeter"><a href="#Land-perimeter" class="headerlink" title="Land perimeter"></a>Land perimeter</h3><ul>
+<li><p>&#x984C;&#x76EE;&#xFF1A;<a href="https://www.codewars.com/kata/land-perimeter" target="_blank" rel="noopener">https://www.codewars.com/kata/land-perimeter</a></p>
+</li>
+<li><p>Task&#xFF1A;&#x7D66;&#x5B9A;&#x7684;arr&#x88E1;&#x7684;X&#x8868;&#x793A;&#x4E00;&#x584A;1x1&#x7684;&#x571F;&#x5730;&#xFF0C;&#x6578;&#x51FA;&#x571F;&#x5730;&#x7684;&#x5468;&#x9577;&#x3002;</p>
+</li>
+<li><p>Hint&#xFF1A;&#x5468;&#x9577; $=$ &#x571F;&#x5730;&#x584A;&#x6578; $\times$ 4 $-$ &#x76F8;&#x9130;&#x908A;&#x6578; $\times$ 2&#x200B; <del>&#xFF08;&#x6211;&#x662F;google&#x4E86;&#x624D;&#x77E5;&#x9053;&#xFF09;</del></p>
+</li>
+</ul>
 <p>My Solution&#xFF1A;</p>
-<p></p><figure class="highlight python hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">land_perimeter</span><span class="hljs-params">(arr)</span>:</span></span><br><span class="line">    land = <span class="hljs-number">0</span></span><br><span class="line">    neighbor = <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">for</span> m <span class="hljs-keyword">in</span> range(len(arr)):</span><br><span class="line">        <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> range(len(arr[<span class="hljs-number">0</span>])):</span><br><span class="line">            <span class="hljs-keyword">if</span> arr[m][n] == <span class="hljs-string">&quot;X&quot;</span>:</span><br><span class="line">                land += <span class="hljs-number">1</span></span><br><span class="line">                <span class="hljs-comment"># check up and down</span></span><br><span class="line">                <span class="hljs-keyword">if</span> m &lt; len(arr) - <span class="hljs-number">1</span>:</span><br><span class="line">                    <span class="hljs-keyword">if</span> arr[m+<span class="hljs-number">1</span>][n] == <span class="hljs-string">&quot;X&quot;</span>:</span><br><span class="line">                        neighbor += <span class="hljs-number">1</span></span><br><span class="line">                <span class="hljs-comment"># check left and right</span></span><br><span class="line">                <span class="hljs-keyword">if</span> n &lt; len(arr[<span class="hljs-number">0</span>]) - <span class="hljs-number">1</span>:</span><br><span class="line">                    <span class="hljs-keyword">if</span> arr[m][n+<span class="hljs-number">1</span>] == <span class="hljs-string">&quot;X&quot;</span>:</span><br><span class="line">                        neighbor += <span class="hljs-number">1</span></span><br><span class="line">    perimeter = <span class="hljs-number">4</span>*land - <span class="hljs-number">2</span>*neighbor</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Total land perimeter: &quot;</span>+ str(perimeter) <span class="hljs-comment">#perimeter of all the islands</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p></p><figure class="highlight python hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">land_perimeter</span><span class="hljs-params">(arr)</span>:</span></span><br><span class="line">    land = <span class="hljs-number">0</span></span><br><span class="line">    neighbor = <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">for</span> m <span class="hljs-keyword">in</span> range(len(arr)):</span><br><span class="line">        <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> range(len(arr[<span class="hljs-number">0</span>])):</span><br><span class="line">            <span class="hljs-keyword">if</span> arr[m][n] == <span class="hljs-string">&quot;X&quot;</span>:</span><br><span class="line">                land += <span class="hljs-number">1</span></span><br><span class="line">                <span class="hljs-comment"># check up and down</span></span><br><span class="line">                <span class="hljs-keyword">if</span> m &lt; len(arr) - <span class="hljs-number">1</span>:</span><br><span class="line">                    <span class="hljs-keyword">if</span> arr[m+<span class="hljs-number">1</span>][n] == <span class="hljs-string">&quot;X&quot;</span>:</span><br><span class="line">                        neighbor += <span class="hljs-number">1</span></span><br><span class="line">                <span class="hljs-comment"># check left and right</span></span><br><span class="line">                <span class="hljs-keyword">if</span> n &lt; len(arr[<span class="hljs-number">0</span>]) - <span class="hljs-number">1</span>:</span><br><span class="line">                    <span class="hljs-keyword">if</span> arr[m][n+<span class="hljs-number">1</span>] == <span class="hljs-string">&quot;X&quot;</span>:</span><br><span class="line">                        neighbor += <span class="hljs-number">1</span></span><br><span class="line">    perimeter = <span class="hljs-number">4</span>*land - <span class="hljs-number">2</span>*neighbor</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Total land perimeter: &quot;</span>+ str(perimeter)</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="Sum-of-Pairs"><a href="#Sum-of-Pairs" class="headerlink" title="Sum of Pairs"></a>Sum of Pairs</h3><ul>
+<li><p>&#x984C;&#x76EE;&#xFF1A;<a href="https://www.codewars.com/kata/sum-of-pairs" target="_blank" rel="noopener">https://www.codewars.com/kata/sum-of-pairs</a></p>
+</li>
+<li><p>Task&#xFF1A;&#x7D66;&#x5B9A;&#x4E00;&#x4E32;&#x6574;&#x6578;&#x5217;&#x548C;&#x4E00;&#x500B;&#x6574;&#x6578;&#xFF08;&#x548C;&#xFF09;&#xFF0C;&#x6C42;&#x51FA;&#x6578;&#x5217;&#x4E2D;&#x52A0;&#x8D77;&#x4F86;&#x7B49;&#x65BC;&#x300C;&#x548C;&#x300D;&#x7684;&#x5169;&#x500B;&#x6578;&#x3002;</p>
+<p>&#x8209;&#x4F8B;&#x4F86;&#x8AAA;&#xFF1A;$([3, 11, 7, 5], 10)$    &#x2192;    &#x61C9;&#x8A72;&#x5F97;&#x5230;$[3, 7]$&#xFF0C;&#x56E0;&#x70BA;$3+7=10$</p>
+</li>
+</ul>
+<p>Hint&#xFF1A;&#x9019;&#x4E00;&#x984C;&#x6709;&#x5728;LeetCode&#x4E0A;&#x89E3;&#x904E;<del>&#xFF08;&#x552F;&#x4E00;&#x5BEB;&#x5F97;&#x51FA;&#x4F86;&#x7684;QQ&#x7684;&#xFF09;</del>&#xFF0C;&#x539F;&#x5148;&#x7528;for&#x8FF4;&#x5708;&#x786C;&#x5C3B;&#xFF0C;&#x4F46;&#x904B;&#x7B97;&#x6642;&#x9593;&#x6703;&#x592A;&#x9577;&#xFF0C;&#x6240;&#x4EE5;&#x5229;&#x7528;python&#x5167;dictory&#x7D22;&#x5F15;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x8B93;&#x300C;&#x5DEE;&#x300D;&#x8B8A;&#x6210;key&#xFF0C;&#x300C;&#x51FA;&#x73FE;&#x904E;&#x7684;&#x6578;&#x5B57;&#x300D;&#x8B8A;&#x6210;value&#xFF0C;&#x4EE5;&#x4E0A;&#x9762;&#x8209;&#x7684;&#x4F8B;&#x5B50;&#x4F86;&#x8AAA;&#xFF0C;&#x7B2C;&#x4E00;&#x500B;&#x6578;&#x5B57;3&#x9032;&#x5165;dic&#x5F8C;<code>dic = {7:3}</code>&#xFF0C;&#x7576;for&#x8F2A;&#x5230;7&#x7684;&#x6642;&#x5019;&#xFF0C;&#x56E0;&#x70BA;7&#x5DF2;&#x7D93;&#x662F;dic&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x6240;&#x4EE5;<code>if</code>&#x7684;&#x5224;&#x65B7;&#x5F0F;&#x6703;&#x8B8A;False&#xFF0C;&#x5C31;&#x6703;&#x57F7;&#x884C;<code>else</code>&#x5E95;&#x4E0B;&#x7684;&#x5167;&#x5BB9;&#xFF0C;&#x56DE;&#x50B3;&#x7B54;&#x6848;&#x3002;</p>
+<p></p><figure class="highlight python hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum_pairs</span><span class="hljs-params">(ints, s)</span>:</span></span><br><span class="line">    dic = {}</span><br><span class="line">    <span class="hljs-keyword">for</span> num <span class="hljs-keyword">in</span> ints:</span><br><span class="line">        <span class="hljs-keyword">if</span> num <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> dic:</span><br><span class="line">            dic[s-num] = num</span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> [dic[num], num]</span><br></pre></td></tr></tbody></table></figure><p></p>
 <h2 id="6-Kyu"><a href="#6-Kyu" class="headerlink" title="6 Kyu"></a>6 Kyu</h2></body></html>
     
     </div>
@@ -170,10 +194,21 @@
     <div class="container">
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
+		<span id="busuanzi_container_site_uv">
+    			感谢
+    			<span id="busuanzi_value_site_uv">0</span>
+    			位閱讀者的
+		</span>
+		<span id="busuanzi_container_site_pv">
+    			<span id="busuanzi_value_site_pv">0</span>
+    			次陪伴
+		</span><p>
+	
                 &copy; 2020 HongCC&nbsp;
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
                         href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
             </div>
+
             <div class="column is-hidden-mobile"></div>
 
             
